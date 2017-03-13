@@ -1,0 +1,50 @@
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.maincard {
+  max-width: 20em;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.halfwidth {
+  width: 50%;
+  flex: 1;
+  text-align: left;
+}
+
+.fullwidth {
+  width: 100%;
+  display: flex;
+}
+
+.right {
+  margin-left: auto;
+}
+
+.flex {
+  display: flex;
+}
+
+@media screen and (min-width: 768px) {
+  .name {
+    font-size: 200px;
+  }
+
+  .logo {
+    height: 300px;
+  }
+
+  .description {
+    font-size: 20px;
+  }
+
+  .slider {
+    width: 560px;
+  }
+}
