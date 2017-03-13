@@ -23,7 +23,6 @@ class MainPage extends React.Component {
           <CardMedia
             aspectRatio="square"
             image={avatar}
-            contentOverlay={true}
           />
           <CardTitle
             title="東風谷オーシャン"

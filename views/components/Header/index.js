@@ -13,19 +13,17 @@ class Header extends React.Component {
   render() {
     return (
       <div className={styles.header}>
-        <div className={styles.languages}>
-          { Object.keys(metadata).map(lang => (
-            <Button key={lang}
-               onClick={this.switchLanguage.bind(this, lang)}
-               raised={this.context.locale === lang}>
-              <div className={classNames({
-                [styles.langinactive]: this.context.locale !== lang
-              })}>
-                { metadata[lang] }
-              </div>
-            </Button>
-          )) }
-        </div>
+        { Object.keys(metadata).map(lang => (
+          <Button key={lang}
+             onClick={this.switchLanguage.bind(this, lang)}
+             raised={this.context.locale === lang}>
+            <div className={classNames({
+              [styles.langinactive]: this.context.locale !== lang
+            })}>
+              { metadata[lang] }
+            </div>
+          </Button>
+        )) }
       </div>
     )
   }
