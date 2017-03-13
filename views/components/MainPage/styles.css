@@ -2,7 +2,6 @@
   flex: 1;
   flex-direction: column;
   justify-content: center;
-  display: flex;
 }
 
 .maincard {
@@ -10,7 +9,7 @@
   min-height: 41em;
   align-items: center;
   /*justify-content: center;*/
-  margin: auto;
+  margin: 4em;
   /*vertical-align: baseline;*/
 }
 
@@ -33,20 +32,8 @@
   display: flex;
 }
 
-@media screen and (min-width: 768px) {
-  .name {
-    font-size: 200px;
-  }
-
-  .logo {
-    height: 300px;
-  }
-
-  .description {
-    font-size: 20px;
-  }
-
-  .slider {
-    width: 560px;
+@media screen and (min-height: 45em) {
+  .container {
+    display: flex;
   }
 }
