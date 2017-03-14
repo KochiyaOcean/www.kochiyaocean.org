@@ -707,7 +707,6 @@ FSS.Renderer.prototype = {
  */
 FSS.CanvasRenderer = function() {
   FSS.Renderer.call(this);
-  console.log(this)
   this.element = document.createElement('canvas');
   this.element.style.display = 'block';
   this.context = this.element.getContext('2d');

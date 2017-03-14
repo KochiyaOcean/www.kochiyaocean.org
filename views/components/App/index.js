@@ -52,7 +52,6 @@ class App extends React.Component {
 
   getChildContext() {
     const locale = standardizeLocale(this.props.location.query.locale || navigator.language)
-    console.log(locale)
     return {
       __: intl(locale),
       switchLanguage: (lang) => this.switchLanguage(lang),
