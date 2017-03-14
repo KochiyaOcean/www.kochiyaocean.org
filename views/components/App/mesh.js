@@ -1,9 +1,19 @@
 export default function (container) {
+
+  function getRatio (target) {
+    try {
+      const { height, width } = target.getClientRects()[0]
+      return width / height
+    } catch (e) {
+      return 2  
+    }
+  }
+
   const MESH = {
       width: 1.8,
       height: 1.8,
       depth: 20,
-      segments: 16,
+      segments: Math.ceil(getRatio(container) * 8),
       slices: 8,
       xRange: 0.5,
       yRange: 0.5,
@@ -154,6 +164,7 @@ export default function (container) {
   }
 
   function resize(width, height) {
+    MESH.segments = Math.ceil(getRatio(container) * 8)
     renderer.setSize(width, height);
     FSS.Vector3.set(center, renderer.halfWidth, renderer.halfHeight);
     createMesh();
