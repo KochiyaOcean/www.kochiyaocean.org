@@ -1,80 +1,66 @@
 import React from 'react'
-import { Card, CardMedia, CardTitle, CardText, CardActions } from 'react-toolbox/lib/card';
-import { Button } from 'react-toolbox/lib/button'
-import Dropdown from 'react-toolbox/lib/dropdown'
-import faStyle from 'font-awesome/css/font-awesome.css'
+import { Card } from 'react-toolbox/lib/card'
 import classnames from 'classnames'
 
 import styles from './styles'
-import avatar from './avatar.png'
-import metadata from '../../intl/metadata'
 
-const lang = Object.keys(metadata).map(key => ({
-  value: key,
-  label: metadata[key],
-}))
+import Resume from '../Resume'
+import MainCnt from '../MainCnt'
+
+let flag = false
 
 class MainPage extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      displayResume: false,
+    }
+  }
+  getChildContext() {
+    return {
+      toggle: () => this.toggle(),
+    }
+  }
+  toggle() {
+    this.setState({
+      displayResume: !this.state.displayResume,
+    })
+  }
   render() {
-    const { __ } = this.context
+    const mainContentClassName = classnames({
+      [styles.fade]: flag,
+      [styles.in]: !this.state.displayResume,
+      [styles.out]: this.state.displayResume,
+    })
+    const resumeContentClassName = classnames({
+      [styles.fade]: flag,
+      [styles.in]: this.state.displayResume,
+      [styles.out]: !this.state.displayResume,
+    })
+    if (!flag) flag = true
     return (
       <div className={styles.container}>
-        <Card className={styles.maincard} >
-          <CardMedia
-            aspectRatio="square"
-            image={avatar}
-          />
-          <CardTitle
-            title="東風谷オーシャン"
-            subtitle={
-              <div className={styles.flex}>
-                <div>@KochiyaOcean</div>
-                <div className={styles.right}>
-                  <i className={classnames(faStyle.fa, faStyle['fa-map-marker'])}/> {__('Shanghai')}
-                </div>
-              </div>
-            }
-          />
-          <CardText>
-            Just a JavaScript developer.<br />
-            #{__('frontend')} #JavaScript #React<br />
-            #{__('kancolle')} #{__('touhou')} #{__('gup')}
-          </CardText>
-          <CardText>
-            <div className={styles.fullwidth}>
-              <Button className={styles.halfwidth}
-                href="https://github.com/KochiyaOcean" target='_blank'>
-                <i className={classnames(faStyle.fa, faStyle['fa-github'])}/> {__('github')}
-              </Button>
-              <Button className={styles.halfwidth}
-                href="https://t.me/KochiyaOcean" target='_blank'>
-                <i className={classnames(faStyle.fa, faStyle['fa-telegram'])}/> {__('telegram')}
-              </Button>
-            </div>
-            <div className={styles.fullwidth}>
-              <Button className={styles.halfwidth}
-                href="https://twitter.com/KochiyaOcean" target='_blank'>
-                <i className={classnames(faStyle.fa, faStyle['fa-twitter'])}/> {__('twitter')}
-              </Button>
-              <Button className={styles.halfwidth}
-                href="http://weibo.com/androidian233" target='_blank'>
-                <i className={classnames(faStyle.fa, faStyle['fa-weibo'])}/> {__('weibo')}
-              </Button>
-            </div>
-            <div className={styles.fullwidth}>
-              <Button className={styles.halfwidth}
-                href="https://blog.kochiyaocean.org/" target='_blank'>
-                <i className={classnames(faStyle.fa, faStyle['fa-book'])}/> {__('blog')}
-              </Button>
-              <Button className={styles.halfwidth} disabled>
-                <i className={classnames(faStyle.fa, faStyle['fa-id-card-o'])}/> {__('resume')}
-              </Button>
-            </div>
-          </CardText>
+        <Card ref='container' raised
+          className={classnames(styles.maincard, {
+            [styles.maincontainer]: !this.state.displayResume,
+            [styles.resumecontainer]: this.state.displayResume,
+          })} >
+          <div className={mainContentClassName}
+            ref='main'>
+            <MainCnt />
+          </div>
+          <div className={classnames(resumeContentClassName, styles.resume)}
+            ref='resume' >
+            <Resume />
+          </div>
         </Card>
       </div>
     )
   }
+}
+
+MainPage.childContextTypes = {
+  toggle: React.PropTypes.func,
 }
 
 MainPage.contextTypes = {

@@ -1,0 +1,18 @@
+.resumecontent {
+  height: calc(100% - 3.7em);
+  overflow: scroll;
+}
+
+.squarebtn {
+  width: 2.5em;
+  height: 2.5em;
+}
+
+.divider {
+  position: relative;
+  top: -3.7em;
+  border-bottom: 1px solid #d9d9d9;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}

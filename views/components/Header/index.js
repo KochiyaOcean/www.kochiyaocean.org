@@ -18,7 +18,7 @@ class Header extends React.Component {
              onClick={this.switchLanguage.bind(this, lang)}
              raised={this.context.locale === lang}>
             <div className={classNames({
-              [styles.langinactive]: this.context.locale !== lang
+              [styles.langinactive]: this.context.locale !== lang,
             })}>
               { metadata[lang] }
             </div>
@@ -32,7 +32,7 @@ class Header extends React.Component {
 Header.contextTypes = {
   router: React.PropTypes.object,
   switchLanguage: React.PropTypes.func,
-  locale: React.PropTypes.string
+  locale: React.PropTypes.string,
 }
 
 export default Header
