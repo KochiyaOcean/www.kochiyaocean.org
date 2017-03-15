@@ -4,12 +4,14 @@
   justify-content: center;
   width: 100%;
   z-index: 1000;
+  pointer-events: none;
 }
 
 .maincard {
   height: 41em;
   align-items: center;
   margin: 4em auto;
+  pointer-events: all;
 }
 
 .maincard > div {
