@@ -40,9 +40,8 @@ module.exports = {
   },
   'settings': {
     'import/resolver': {
-      'node': {
-        'extensions': ['', '.js', '.jsx'],
-        'paths': [__dirname]
+      'webpack': {
+        'config': 'webpack.config.dev.js',
       },
     },
   },
