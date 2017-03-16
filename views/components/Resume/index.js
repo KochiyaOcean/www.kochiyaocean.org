@@ -1,5 +1,5 @@
 import React from 'react'
-import { CardActions, CardText, CardTitle } from 'react-toolbox/lib/card'
+import { CardActions, CardText } from 'react-toolbox/lib/card'
 import { Button } from 'react-toolbox/lib/button'
 import classnames from 'classnames'
 import faStyle from 'font-awesome/css/font-awesome.css'
