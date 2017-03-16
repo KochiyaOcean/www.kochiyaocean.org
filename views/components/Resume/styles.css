@@ -27,7 +27,6 @@
 .divider {
   position: relative;
   border-bottom: 1px solid #d9d9d9;
-  width: 60%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -76,11 +75,23 @@
   border: 2px solid rgba(0,0,0,0.6);
 }
 
+.otherbtns {
+  margin: auto;
+}
 
 @media screen and (min-width: 30em) {
   .resumecontent {
     padding-left: 3em;
     padding-right: 3em;
+  }
+  .returnbtn {
+    position: absolute;
+  }
+  .secondbtn {
+    margin-left: 5.5em !important;
+  }
+  .divider {
+    width: calc(100% - 7em);
   }
 }
 
@@ -88,5 +99,8 @@
   .resumecontent {
     padding-left: 2em;
     padding-right: 2em;
+  }
+  .divider {
+    width: calc(100% - 4em);
   }
 }

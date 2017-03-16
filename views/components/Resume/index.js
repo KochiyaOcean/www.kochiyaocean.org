@@ -61,11 +61,11 @@ class Resume extends React.Component {
           }
         </CardText>
         <CardActions>
-          <Button className={styles.squarebtn}
+          <Button className={classnames(styles.squarebtn, styles.returnbtn)}
             onClick={this.context.toggle.bind(this)}>
             <i className={classnames(faStyle.fa, faStyle['fa-chevron-left'])}/>
           </Button>
-          <Button className={styles.squarebtn}
+          <Button className={classnames(styles.squarebtn, styles.secondbtn)}
             href="https://github.com/KochiyaOcean" target='_blank'>
             <i className={classnames(faStyle.fa, faStyle['fa-github'])}/>
           </Button>
