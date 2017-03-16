@@ -20,16 +20,16 @@ export default [
       {
         title: 'Front-end',
         contents: [
-          'HTML CSS JavaScript',
-          'Gulp Webpack',
-          'Bootstrap React-Toolbox',
-          'React/Redux jQuery',
+          'HTML · CSS · JavaScript',
+          'Gulp · Webpack',
+          'Bootstrap · React-Toolbox · Material-UI',
+          'React/Redux · jQuery',
         ],
       },
       {
         title: 'Node.js',
         contents: [
-          'Koa Electron',
+          'Koa · Electron',
         ],
       },
     ],
