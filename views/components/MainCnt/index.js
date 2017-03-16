@@ -4,7 +4,7 @@ import { Button } from 'react-toolbox/lib/button'
 import classnames from 'classnames'
 import faStyle from 'font-awesome/css/font-awesome.css'
 
-import avatar from './avatar.png'
+import avatar from './avatar.svg'
 import styles from './styles'
 
 
