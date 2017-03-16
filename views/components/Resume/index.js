@@ -1,11 +1,52 @@
 import React from 'react'
-import { CardActions, CardText } from 'react-toolbox/lib/card'
+import { CardActions, CardText, CardTitle } from 'react-toolbox/lib/card'
 import { Button } from 'react-toolbox/lib/button'
 import classnames from 'classnames'
 import faStyle from 'font-awesome/css/font-awesome.css'
+// import 'ubuntu-fontface/fonts/ubuntu-regular-webfont.woff'
+// import 'ubuntu-fontface/fonts/ubuntu-regular-webfont.woff2'
+// import 'ubuntu-fontface/fonts/ubuntu-regular-webfont.svg'
 
 import styles from './styles'
-import resume from './resume.md'
+import resume from './resume'
+
+const ResumeCnt = (props) => {
+  return (
+    <div>
+      <h2 dangerouslySetInnerHTML={{ __html: props.title }} className={styles.title} />
+      <div>
+        {
+          props.contents.map(cnt =>
+            <div key={cnt.title}>
+              <h3 dangerouslySetInnerHTML={{ __html: cnt.title }} className={styles.contentstitle} />
+                {
+                  cnt.subtitle ?
+                  <div className={styles.subtitle} dangerouslySetInnerHTML={{ __html: cnt.subtitle }} />
+                  : null
+                }
+              <div className={styles.contentsofcontents}>
+                {
+                  typeof cnt.contents === 'string' ?
+                  <div dangerouslySetInnerHTML={{ __html: cnt.contents }} />
+                  : <div>
+                    <ul>
+                      {
+                        cnt.contents.map(li =>
+                          <li dangerouslySetInnerHTML={{ __html: li }} key={li} />
+                        )
+                      }
+                    </ul>
+                  </div>
+                }
+              </div>
+            </div>
+          )
+        }
+      </div>
+    </div>
+  )
+}
+
 
 class Resume extends React.Component {
   render() {
@@ -13,7 +54,11 @@ class Resume extends React.Component {
     return (
       <div style={{ height: '100%' }}>
         <CardText className={styles.resumecontent}>
-          <div dangerouslySetInnerHTML={{ __html: resume }} />
+          {
+            resume.map(cnt =>
+              <ResumeCnt key={cnt.title} {...cnt} />
+            )
+          }
         </CardText>
         <CardActions>
           <Button className={styles.squarebtn}
@@ -45,7 +90,7 @@ class Resume extends React.Component {
             <i className={classnames(faStyle.fa, faStyle['fa-envelope-open'])}/>
           </Button>
         </CardActions>
-        <div className={styles.divider} />
+        <div className={styles.divider} style={{ top: '-3.7em' }} />
       </div>
     )
   }

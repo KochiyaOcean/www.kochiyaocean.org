@@ -38,9 +38,6 @@ module.exports = {
       }, {
         test: /\.(eot|ttf|wav|mp3)(\?v=\d+\.\d+\.\d+)?$/,
         loaders: ['file'],
-      }, {
-        test: /\.md$/,
-        loaders: ['html-loader', 'markdown-loader'],
       },
     ],
   },
