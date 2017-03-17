@@ -3,9 +3,6 @@ import { CardActions, CardText } from 'react-toolbox/lib/card'
 import { Button } from 'react-toolbox/lib/button'
 import classnames from 'classnames'
 import faStyle from 'font-awesome/css/font-awesome.css'
-// import 'ubuntu-fontface/fonts/ubuntu-regular-webfont.woff'
-// import 'ubuntu-fontface/fonts/ubuntu-regular-webfont.woff2'
-// import 'ubuntu-fontface/fonts/ubuntu-regular-webfont.svg'
 
 import styles from './styles'
 import resume from './resume'
@@ -13,30 +10,44 @@ import resume from './resume'
 const ResumeCnt = (props) => {
   return (
     <div>
-      <h2 dangerouslySetInnerHTML={{ __html: props.title }} className={styles.title} />
+      <h2 className={styles.title}>
+        { props.title }
+      </h2>
       <div>
         {
           props.contents.map(cnt =>
             <div key={cnt.title}>
-              <h3 dangerouslySetInnerHTML={{ __html: cnt.title }} className={styles.contentstitle} />
+              <h3 className={styles.contentstitle}>
+                { cnt.title }
+              </h3>
                 {
                   cnt.subtitle ?
-                  <div className={styles.subtitle} dangerouslySetInnerHTML={{ __html: cnt.subtitle }} />
+                  <div className={styles.subtitle}>
+                    { cnt.subtitle }
+                  </div>
                   : null
                 }
               <div className={styles.contentsofcontents}>
                 {
-                  typeof cnt.contents === 'string' ?
-                  <div dangerouslySetInnerHTML={{ __html: cnt.contents }} />
-                  : <div>
+                  cnt.contents ?
+                  <div>
+                    { cnt.contents }
+                  </div>
+                  : null
+                }
+                { cnt.lists ?
+                  <div>
                     <ul>
                       {
-                        cnt.contents.map(li =>
-                          <li dangerouslySetInnerHTML={{ __html: li }} key={li} />
+                        cnt.lists.map((li, index) =>
+                          <li key={index}>
+                            { li }
+                          </li>
                         )
                       }
                     </ul>
                   </div>
+                  : null
                 }
               </div>
             </div>

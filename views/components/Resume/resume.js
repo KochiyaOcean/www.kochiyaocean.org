@@ -1,3 +1,5 @@
+import React from 'react'
+
 export default [
   {
     title: 'Experience',
@@ -19,8 +21,8 @@ export default [
     contents: [
       {
         title: 'Front-end',
-        contents: [
-          'HTML · CSS · JavaScript',
+        lists: [
+          'HTML · CSS · JavaScript · CoffeeScript',
           'Gulp · Webpack',
           'Bootstrap · React-Toolbox · Material-UI',
           'React/Redux · jQuery',
@@ -28,7 +30,7 @@ export default [
       },
       {
         title: 'Node.js',
-        contents: [
+        lists: [
           'Koa · Electron',
         ],
       },
@@ -40,7 +42,10 @@ export default [
       {
         title: 'poi',
         subtitle: '\#Electron \#Node.js \#React \#Redux \#Bootstrap',
-        contents: '<a href="https://poi.io" target="_blank">poi.io</a><br />A Browser for web-based game <a href="http://www.dmm.com/netgame_s/kancolle/" target="_blank">Kantai-Collection</a>',
+        contents: <span>
+          <a href="https://poi.io" target="_blank">poi.io</a><br />
+          A Browser for web-based game <a href="http://www.dmm.com/netgame_s/kancolle/" target="_blank">Kantai-Collection</a>
+        </span>,
       },
     ],
   },
