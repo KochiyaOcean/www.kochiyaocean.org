@@ -43,6 +43,10 @@ module.exports = {
   },
   resolve: {
     extensions: ['', '.js', '.css'],
+    alias: {
+      'react': 'react-lite',
+      'react-dom': 'react-lite',
+    },
   },
   postcss: [
     require('postcss-cssnext'),
