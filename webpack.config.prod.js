@@ -27,7 +27,7 @@ module.exports = {
         exclude: /node_modules\/(?!react-icons)/,
         loader: 'babel',
         query: {
-          presets: ['latest', 'react'],
+          presets: ['latest', 'react', 'stage-0'],
         },
       }, {
         test: /\.css$/,

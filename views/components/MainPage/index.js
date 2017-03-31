@@ -10,22 +10,22 @@ import MainCnt from '../MainCnt'
 let flag = false
 
 class MainPage extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      displayResume: false,
-    }
+  state = {
+    displayResume: false,
   }
+
   getChildContext() {
     return {
-      toggle: () => this.toggle(),
+      toggle: this.toggle,
     }
   }
-  toggle() {
+
+  toggle = () => {
     this.setState({
       displayResume: !this.state.displayResume,
     })
   }
+
   render() {
     const mainContentClassName = classnames({
       [styles.fade]: flag,

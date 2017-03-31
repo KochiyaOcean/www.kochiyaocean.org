@@ -59,52 +59,49 @@ const ResumeCnt = (props) => {
 }
 
 
-class Resume extends React.Component {
-  render() {
-    // const { __ } = this.context
-    return (
-      <div style={{ height: '100%' }}>
-        <CardText className={styles.resumecontent}>
-          {
-            resume.map(cnt =>
-              <ResumeCnt key={cnt.title} {...cnt} />
-            )
-          }
-        </CardText>
-        <CardActions>
-          <Button className={classnames(styles.squarebtn, styles.returnbtn)}
-            onClick={this.context.toggle.bind(this)}>
-            <i className={classnames(faStyle.fa, faStyle['fa-chevron-left'])}/>
-          </Button>
-          <Button className={classnames(styles.squarebtn, styles.secondbtn)}
-            href="https://github.com/KochiyaOcean" target='_blank'>
-            <i className={classnames(faStyle.fa, faStyle['fa-github'])}/>
-          </Button>
-          <Button className={styles.squarebtn}
-            href="https://t.me/KochiyaOcean" target='_blank'>
-            <i className={classnames(faStyle.fa, faStyle['fa-telegram'])}/>
-          </Button>
-          <Button className={styles.squarebtn}
-            href="http://weibo.com/androidian233" target='_blank'>
-            <i className={classnames(faStyle.fa, faStyle['fa-weibo'])}/>
-          </Button>
-          <Button className={styles.squarebtn}
-            href="https://twitter.com/KochiyaOcean" target='_blank'>
-            <i className={classnames(faStyle.fa, faStyle['fa-twitter'])}/>
-          </Button>
-          <Button className={styles.squarebtn}
-            href="https://blog.kochiyaocean.org/" target='_blank'>
-            <i className={classnames(faStyle.fa, faStyle['fa-book'])}/>
-          </Button>
-          <Button className={styles.squarebtn}
-            href="mailto:root@kochiyaocean.org" target='_blank'>
-            <i className={classnames(faStyle.fa, faStyle['fa-envelope-open'])}/>
-          </Button>
-        </CardActions>
-        <div className={styles.divider} style={{ top: '-3.7em' }} />
-      </div>
-    )
-  }
+const Resume = ({ children }, { __, toggle }) => {
+  return (
+    <div style={{ height: '100%' }}>
+      <CardText className={styles.resumecontent}>
+        {
+          resume.map(cnt =>
+            <ResumeCnt key={cnt.title} {...cnt} />
+          )
+        }
+      </CardText>
+      <CardActions>
+        <Button className={classnames(styles.squarebtn, styles.returnbtn)}
+          onClick={toggle}>
+          <i className={classnames(faStyle.fa, faStyle['fa-chevron-left'])}/>
+        </Button>
+        <Button className={classnames(styles.squarebtn, styles.secondbtn)}
+          href="https://github.com/KochiyaOcean" target='_blank'>
+          <i className={classnames(faStyle.fa, faStyle['fa-github'])}/>
+        </Button>
+        <Button className={styles.squarebtn}
+          href="https://t.me/KochiyaOcean" target='_blank'>
+          <i className={classnames(faStyle.fa, faStyle['fa-telegram'])}/>
+        </Button>
+        <Button className={styles.squarebtn}
+          href="http://weibo.com/androidian233" target='_blank'>
+          <i className={classnames(faStyle.fa, faStyle['fa-weibo'])}/>
+        </Button>
+        <Button className={styles.squarebtn}
+          href="https://twitter.com/KochiyaOcean" target='_blank'>
+          <i className={classnames(faStyle.fa, faStyle['fa-twitter'])}/>
+        </Button>
+        <Button className={styles.squarebtn}
+          href="https://blog.kochiyaocean.org/" target='_blank'>
+          <i className={classnames(faStyle.fa, faStyle['fa-book'])}/>
+        </Button>
+        <Button className={styles.squarebtn}
+          href="mailto:root@kochiyaocean.org" target='_blank'>
+          <i className={classnames(faStyle.fa, faStyle['fa-envelope-open'])}/>
+        </Button>
+      </CardActions>
+      <div className={styles.divider} style={{ top: '-3.7em' }} />
+    </div>
+  )
 }
 
 Resume.contextTypes = {

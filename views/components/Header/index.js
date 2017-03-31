@@ -5,28 +5,22 @@ import { Button } from 'react-toolbox/lib/button'
 import metadata from '../../intl/metadata'
 import styles from './styles'
 
-class Header extends React.Component {
-  switchLanguage(lang) {
-    return this.context.switchLanguage(lang)
-  }
-
-  render() {
-    return (
-      <div className={styles.header}>
-        { Object.keys(metadata).map(lang => (
-          <Button key={lang}
-             onClick={this.switchLanguage.bind(this, lang)}
-             raised={this.context.locale === lang}>
-            <div className={classNames({
-              [styles.langinactive]: this.context.locale !== lang,
-            })}>
-              { metadata[lang] }
-            </div>
-          </Button>
-        )) }
-      </div>
-    )
-  }
+const Header = ({ children }, { switchLanguage, locale}) => {
+  return (
+    <div className={styles.header}>
+      { Object.keys(metadata).map(lang => (
+        <Button key={lang}
+           onClick={() => switchLanguage(lang)}
+           raised={locale === lang}>
+          <div className={classNames({
+            [styles.langinactive]: locale !== lang,
+          })}>
+            { metadata[lang] }
+          </div>
+        </Button>
+      )) }
+    </div>
+  )
 }
 
 Header.contextTypes = {
