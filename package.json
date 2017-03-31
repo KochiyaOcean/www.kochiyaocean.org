@@ -29,6 +29,7 @@
     "babel-eslint": "^7.0.0",
     "babel-polyfill": "^6.13.0",
     "babel-preset-react-hmre": "^1.1.1",
+    "babel-preset-stage-0": "^6.22.0",
     "classnames": "^2.2.5",
     "css-loader": "^0.24.0",
     "eslint": "^3.2.2",
