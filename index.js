@@ -4,7 +4,7 @@ const logger = require('koa-logger')
 const serve = require('koa-static')
 const SERVER_PORT = 3000
 
-const app = koa()
+const app = new koa()
 app.use(logger())
 app.use(serve(path.join(__dirname, 'public')))
 
