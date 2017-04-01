@@ -1,17 +1,22 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Router, Route, hashHistory, IndexRoute } from 'react-router'
+import { Router, Route, Redirect } from 'react-router'
+import createBrowserHistory from 'history/createBrowserHistory'
 
 import App from './components/App'
-import MainPage from './components/MainPage'
-
+import locales from './intl/metadata.js'
+import { standardizeLocale } from './utils'
 import './styles'
 
+const history = createBrowserHistory()
+
 const routes = (
-  <Router history={hashHistory}>
-    <Route path="/" component={App}>
-      <IndexRoute component={MainPage} />
-    </Route>
+  <Router history={history}>
+    <Route component={({ match, location }) =>
+      Object.keys(locales).map(path => location.pathname.includes(path)).reduce((a, b) => a || b) ?
+      <Route path="/:locale" component={App} /> :
+      <Redirect to={`/${standardizeLocale(navigator.language)}`}/>
+    } />
   </Router>
 )
 

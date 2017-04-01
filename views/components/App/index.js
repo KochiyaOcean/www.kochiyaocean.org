@@ -3,6 +3,7 @@ import '../../3rd/fss'
 import mesh from '../../3rd/mesh'
 
 import Header from '../Header'
+import MainPage from '../MainPage'
 // import Footer from '../Footer'
 
 import en_US from '../../intl/en-US'
@@ -11,18 +12,6 @@ import zh_TW from '../../intl/zh-TW'
 import ja_JP from '../../intl/ja-JP'
 
 import styles from './styles'
-
-const standardizeLocale = language => {
-  if (['zh-CN', 'zh-TW', 'ja-JP', 'en-US'].includes(language)) return language
-  switch (language) {
-  case 'zh':
-    return 'zh-CN'
-  case 'ja':
-    return 'ja-JP'
-  default:
-    return 'en-US'
-  }
-}
 
 const intl = language => key => {
   switch (language) {
@@ -39,13 +28,11 @@ const intl = language => key => {
 
 class App extends React.Component {
   switchLanguage(lang) {
-    const { pathname, query } = this.props.location
-    query.locale = lang
-    this.context.router.replace({ pathname, query })
+    this.props.history.push(`/${lang}`)
   }
 
   getChildContext() {
-    const locale = standardizeLocale(this.props.location.query.locale || navigator.language)
+    const locale = this.props.match.params.locale
     return {
       __: intl(locale),
       switchLanguage: (lang) => this.switchLanguage(lang),
@@ -63,7 +50,7 @@ class App extends React.Component {
         <div ref={node => this.ground = node} className={styles.ground} />
         <div className={styles.wrapper}>
           <Header />
-          { this.props.children }
+          <MainPage />
           {/* <Footer /> */}
         </div>
       </div>

@@ -9,8 +9,10 @@ module.exports = {
   ],
   output: {
     path: `${__dirname}/public`,
-    publicPath: '/',
     filename: 'app.js',
+  },
+  devServer: {
+    historyApiFallback: true,
   },
   plugins: [
     new webpack.DefinePlugin({
