@@ -44,8 +44,8 @@ const MainCnt = ({ children }, { __, toggle }) => {
         </div>
         <div className={styles.fullwidth}>
           <Button className={styles.halfwidth}
-            href="http://weibo.com/androidian233" target='_blank'>
-            <i className={classnames(faStyle.fa, faStyle['fa-weibo'])}/> {__('weibo')}
+            href="https://www.facebook.com/KochiyaOcean" target='_blank'>
+            <i className={classnames(faStyle.fa, faStyle['fa-facebook-official'])}/> {__('facebook')}
           </Button>
           <Button className={styles.halfwidth}
             href="https://twitter.com/KochiyaOcean" target='_blank'>

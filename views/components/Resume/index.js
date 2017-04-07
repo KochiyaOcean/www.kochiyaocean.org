@@ -83,8 +83,8 @@ const Resume = ({ children }, { __, toggle }) => {
           <i className={classnames(faStyle.fa, faStyle['fa-telegram'])}/>
         </Button>
         <Button className={styles.squarebtn}
-          href="http://weibo.com/androidian233" target='_blank'>
-          <i className={classnames(faStyle.fa, faStyle['fa-weibo'])}/>
+          href="https://www.facebook.com/KochiyaOcean" target='_blank'>
+          <i className={classnames(faStyle.fa, faStyle['fa-facebook-official'])}/>
         </Button>
         <Button className={styles.squarebtn}
           href="https://twitter.com/KochiyaOcean" target='_blank'>

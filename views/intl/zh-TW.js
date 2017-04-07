@@ -4,6 +4,7 @@ export default {
   github: 'GitHub',
   telegram: 'Telegram',
   weibo: '新浪微博',
+  facebook: "臉書",
   twitter: 'Twitter',
   blog: '部落格',
   resume: '簡歷',
