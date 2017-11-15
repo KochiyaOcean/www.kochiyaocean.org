@@ -1,7 +1,7 @@
 export default {
   language: '正體中文',
   Shanghai: '上海',
-  tokyo: '東京',
+  Tokyo: '東京',
   github: 'GitHub',
   telegram: 'Telegram',
   weibo: '新浪微博',
