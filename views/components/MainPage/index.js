@@ -14,6 +14,14 @@ class MainPage extends React.Component {
     displayResume: false,
   }
 
+  childContextTypes = {
+    toggle: React.PropTypes.func,
+  }
+
+  contextTypes = {
+    __: React.PropTypes.func,
+  }
+
   getChildContext() {
     return {
       toggle: this.toggle,
@@ -57,14 +65,6 @@ class MainPage extends React.Component {
       </div>
     )
   }
-}
-
-MainPage.childContextTypes = {
-  toggle: React.PropTypes.func,
-}
-
-MainPage.contextTypes = {
-  __: React.PropTypes.func,
 }
 
 export default MainPage
