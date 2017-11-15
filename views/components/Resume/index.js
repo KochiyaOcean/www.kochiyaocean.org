@@ -5,7 +5,10 @@ import classnames from 'classnames'
 import faStyle from 'font-awesome/css/font-awesome.css'
 
 import styles from './styles'
-import resume from './resume'
+import resume_en from './resume_en'
+import resume_cn from './resume_cn'
+import resume_tw from './resume_tw'
+import resume_jp from './resume_jp'
 
 const ResumeCnt = (props) => {
   return (
@@ -59,7 +62,21 @@ const ResumeCnt = (props) => {
 }
 
 
-const Resume = ({ children }, { __, toggle }) => {
+const Resume = ({ children }, { __, toggle, locale }) => {
+  let resume
+  switch(locale) {
+  case 'zh-CN':
+    resume = resume_cn
+    break
+  case 'zh-TW':
+    resume = resume_tw
+    break
+  case 'ja-JP':
+    resume = resume_jp
+    break
+  default:
+    resume = resume_en
+  }
   return (
     <div style={{ height: '100%' }}>
       <CardText className={styles.resumecontent}>
@@ -106,6 +123,7 @@ const Resume = ({ children }, { __, toggle }) => {
 
 Resume.contextTypes = {
   __: React.PropTypes.func,
+  locale: React.PropTypes.string,
   toggle:  React.PropTypes.func,
 }
 
