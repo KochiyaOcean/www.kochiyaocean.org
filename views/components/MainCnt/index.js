@@ -20,7 +20,7 @@ const MainCnt = ({ children }, { __, toggle }) => {
           <div className={classnames(styles.flex, styles.center)}>
             <span>@KochiyaOcean</span>
             <div className={styles.right}>
-              <i className={classnames(faStyle.fa, faStyle['fa-map-marker'])}/> {__('Shanghai')}
+              <i className={classnames(faStyle.fa, faStyle['fa-map-marker'])}/> {__('Tokyo')}
             </div>
           </div>
         }>
