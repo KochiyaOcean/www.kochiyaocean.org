@@ -8,4 +8,5 @@ const app = new koa()
 app.use(logger())
 app.use(serve(path.join(__dirname, 'public')))
 
+// eslint-disable-next-line no-console
 app.listen(SERVER_PORT, () => console.log(`Koa is listening on port ${SERVER_PORT}`))
