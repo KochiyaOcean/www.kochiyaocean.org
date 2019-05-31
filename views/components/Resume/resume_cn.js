@@ -16,8 +16,13 @@ export default [
       },
       {
         title: '软件工程师 @ teamLab',
-        subtitle: 'Jul 2017 - Present',
+        subtitle: 'Jul 2017 - Mar 2019',
         contents: '自主 CMS 的开发和运用',
+      },
+      {
+        title: '软件工程师 @ indeed',
+        subtitle: 'Apr 2018 - Present',
+        contents: '软件开发',
       },
     ],
   },

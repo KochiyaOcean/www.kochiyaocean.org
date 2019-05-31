@@ -19,6 +19,11 @@ export default [
         subtitle: 'Jul 2017 - Present',
         contents: '自主 CMS 的開發和運用',
       },
+      {
+        title: '軟體工程師 @ indeed',
+        subtitle: 'Apr 2018 - Present',
+        contents: '軟體開發',
+      },
     ],
   },
   {

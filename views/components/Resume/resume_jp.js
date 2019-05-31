@@ -19,6 +19,11 @@ export default [
         subtitle: 'Jul 2017 - Present',
         contents: '自社 PHP-based CMS の開発と運用',
       },
+      {
+        title: 'ソフトウェアエンジニア @ indeed',
+        subtitle: 'Apr 2018 - Present',
+        contents: 'ソフトウェアの開発',
+      },
     ],
   },
   {

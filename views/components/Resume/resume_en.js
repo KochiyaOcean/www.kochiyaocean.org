@@ -19,6 +19,11 @@ export default [
         subtitle: 'Jul 2017 - Present',
         contents: 'Maintenance and development of PHP-based CMS',
       },
+      {
+        title: 'Software Engineer @ indeed',
+        subtitle: 'Apr 2018 - Present',
+        contents: 'Software Development',
+      },
     ],
   },
   {
